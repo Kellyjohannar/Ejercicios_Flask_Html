@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def inicio():
-    return "<h1>¡Servidor Flask Funcionando!</h1><p>Ejercicio 1 completado.</p>"
+    return "<h1>¡Servidor Flask Funcionando!</h1><p>Ejercicio 1 completado</p>"
 
 if __name__ == '__main__':
     app.run(debug=True)
