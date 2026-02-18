@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Consumo API</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+    <div class="contenedorPrincipal">
+        <h1>Directorio de Usuarios Externos</h1>
+
+        {% if usuarios %}
+            {% for usuario in usuarios %}
+                <div class="tarjetaUsuario">
+                    <span class="nombreUsuario">{{ usuario.name }}</span>
+                    <p class="detalleUsuario">Correo: {{ usuario.email }}</p>
+                    <p class="detalleUsuario">Ciudad: {{ usuario.address.city }}</p>
+                    <p class="detalleUsuario">Empresa: {{ usuario.company.name }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p style="text-align: center;">No se pudo obtener información de la API.</p>
+        {% endif %}
+
+        <div class="piePagina">
+            Sistema desarrollado por {{ nombreAutor }}
+        </div>
+    </div>
+</body>
+</html>
