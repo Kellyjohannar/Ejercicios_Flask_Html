@@ -1,16 +1,16 @@
-<!--Esta es la respuesta que se le da al usuario-->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <title>Resultado</title>
-   <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
 </head>
 <body>
-    <h1>¡Aquí tienes tu conversión!</h1>
-
-    <p><strong>{{ res }}</strong></p>
-
-    <a href="/">Volver a convertir otro número</a>
+    <div class="contenedorPrincipal">
+        <h2>Resultado</h2>
+        <p>{{ textoInformativo }}</p>
+        <br>
+        <a href="/">Volver al inicio</a>
+    </div>
 </body>
 </html>

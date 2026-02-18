@@ -1,28 +1,26 @@
-<!--Esta es la primera interacción que se tiene con el usuario-->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8">
-    <title>Mi Conversor</title>
+    <meta charset="UTF-8">
+    <title>Conversor</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
 </head>
 <body>
-    <h1>Conversor de Unidades</h1>
+    <div class="contenedorPrincipal">
+        <h1>Conversor</h1>
+        <p>Ingresa un valor</p>
+        <form action="/procesarConversion" method="POST">
+            <input type="number" name="valorEntrada" step="any" placeholder="Ejemplo: 10" required>
 
-    <form action="/convertir" method="post">
+            <select name="tipoSeleccionado">
+                <option value="kilometroAMilla">KM a Millas</option>
+                <option value="millaAKilometro">Millas a KM</option>
+                <option value="celsiusAFahrenheit">Celsius a Fahrenheit</option>
+                <option value="fahrenheitACelsius">Fahrenheit a Celsius</option>
+            </select>
 
-        <label>Escribe el valor:</label>
-        <input type="number" name="valor" step="any" required><br><br>
-
-        <label>¿Qué quieres convertir?</label>
-        <select name="opcion_conversion">
-            <option value="km_a_millas">Kilómetros a Millas</option>
-            <option value="millas_a_km">Millas a Kilómetros</option>
-            <option value="c_a_f">Celsius a Fahrenheit</option>
-            <option value="f_a_c">Fahrenheit a Celsius</option>
-        </select><br><br>
-
-        <button type="submit">Calcular Resultado</button>
-    </form>
+            <button type="submit" class="botonEnviar">Calcular</button>
+        </form>
+    </div>
 </body>
 </html>

@@ -1,87 +1,43 @@
-/* --- CONFIGURACIÓN DEL CUERPO (EL FONDO DE LA WEB) --- */
 body {
-    /* Se define el tipo de letra.*/
-    font-family: mencken-std-head-compress;
-
-    /* Color de fondo de la pantalla*/
-    background-color: #e9dff3;
-
-    /* 'flex' permite alinear el contenido fácilmente en el centro */
+    background-color: #ffffff;
+    color: #000000;
+    font-family: Arial, sans-serif;
     display: flex;
-
-    /* Ordena los elementos (título y formulario) uno debajo del otro */
-    flex-direction: column;
-
-    /* Centra el formulario de izquierda a derecha */
+    justify-content: center;
     align-items: center;
-
-    /* Separa el contenido 50 píxeles del borde superior de la ventana */
-    padding-top: 50px;
+    height: 100vh;
+    margin: 0;
 }
 
-/* --- ESTILO DEL FORMULARIO (EL CUADRO BLANCO) --- */
-form {
-    /* Color de fondo del cuadro del formulario */
-    background: #eeb9f4;
-
-    /* Espacio interno para que los textos no toquen los bordes del cuadro */
-    padding: 30px;
-
-    /* Redondea las esquinas del cuadro (8 píxeles) */
-    border-radius: 8px;
-
-    /* Crea una sombra suave para dar efecto de profundidad (que parece que flota) */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-
-    /* Ancho fijo del formulario */
-    width: 400px;
+.contenedorPrincipal {
+    border: 2px solid #000000;
+    padding: 2rem;
+    width: 300px;
+    text-align: center;
 }
 
-    /* Se le da espacio a los textos*/
-/*Elemento*/
-label{
-    margin-bottom: 10px;
-    display: block;
+input, select, .botonEnviar {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    color: #000000;
 }
 
-/* --- ELEMENTOS INTERNOS (CUADROS DE TEXTO, MENÚS Y BOTÓN) --- */
-input, select, button {
-    /* Hace que cada elemento ocupe todo el ancho del formulario */
-    width: 90%;
-
-    /* Deja un espacio de 15 píxeles debajo de cada cuadro para que no estén pegados */
-    margin-bottom: 6px;
-
-    /* Hace los cuadros más "altos" para que sea más fácil escribir y leer */
-    padding: 12px;
-
-    /* Redondea un poco las esquinas de los cuadros internos */
-    border-radius: 6px;
-
-    /* Pone un borde fino de color gris claro */
-    border: 1px solid #a5a5a5;
-
-    /* Asegura que cada elemento se comporte como un bloque propio */
-    display: block;
-}
-
-/* --- ESTILO ESPECÍFICO DEL BOTÓN --- */
-button {
-    /* Color morado del botón */
-    background-color: #e600ff;
-
-    /* Color de la letra del botón (blanco) */
-    color: white;
-
-    /* Quita el borde negro que traen los botones por defecto */
-    border: none;
-
-    /* Se cambia el cursor a una mano cuando se pasa el mouse por encima */
+.botonEnviar {
     cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-/* --- EFECTO AL PASAR EL RATÓN POR EL BOTÓN --- */
-button:hover {
-    /* Cambia el morado a uno más oscuro cuando se pone el mouse encima */
-    background-color: #a700b3;
+.botonEnviar:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+a {
+    color: #000000;
+    text-decoration: underline;
 }

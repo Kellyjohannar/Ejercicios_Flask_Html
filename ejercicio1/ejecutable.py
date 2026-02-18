@@ -1,56 +1,46 @@
-#1) Conversor de unidades: formulario con selección (km<-->millas, ºC<-->ºF) y página de resultado.
-
-# Se traen las herramientas necesarias de la librería flask
 from flask import Flask, render_template, request
 
-# Se crea la aplicación.
-# Como la carpeta se llama plantilla y no templates, se le debe avisar a Flask esto se hace con template_folder
-# El staric_folder se coloca para poderle poner estilos por medio de un CSS a la pagina.
-app = Flask(__name__, template_folder='plantilla', static_folder='plantilla')
+aplicacionConversor = Flask(__name__, template_folder='plantilla', static_folder='plantilla')
 
 
-# Esta es la ruta principal. Cuando se entra a la web, se ve el formulario, con el @app.route se esta llamando aplicación.
-@app.route("/", methods=["GET"])
-def inicio():
-    # 'render_template' busca el archivo dentro de la carpeta 'plantilla'
+@aplicacionConversor.route("/", methods=["GET"])
+def mostrarFormulario():
     return render_template("conversor.html")
 
 
-# Esta ruta recibe los datos cuando se pulsa el botón de "Convertir"
-@app.route("/convertir", methods=["POST"])
-def convertir():
+@aplicacionConversor.route("/procesarConversion", methods=["POST"])
+def procesarConversion():
+    valorRecibido = request.form.get("valorEntrada", "0")
+    tipoConversion = request.form.get("tipoSeleccionado")
+
+    # Inicializamos variables para evitar retornos extraños dentro de los condicionales
+    resultadoFinal = 0.0
+    mensajeResultado = ""
+
     try:
-        # 1. Se obtiene el número que se escribio en el cuadro de texto
-        valor = float(request.form.get("valor", "0"))
+        numeroAConvertir = float(valorRecibido)
 
-        # 2. Se obtiene la opción que se elegio en el menú desplegable
-        operacion = request.form.get("opcion_conversion")
+        if tipoConversion == "kilometroAMilla":
+            resultadoFinal = numeroAConvertir * 0.621371
+            mensajeResultado = f"{numeroAConvertir} kilómetros equivalen a {resultadoFinal:.2f} millas."
 
-        # 3. Se hacen las cuentas según lo elegido
-        if operacion == "km_a_millas":
-            resultado = valor * 0.621371
-            texto_final = f"{valor} Kilómetros son {resultado:.2f} Millas"
+        elif tipoConversion == "millaAKilometro":
+            resultadoFinal = numeroAConvertir / 0.621371
+            mensajeResultado = f"{numeroAConvertir} millas equivalen a {resultadoFinal:.2f} kilómetros."
 
-        elif operacion == "millas_a_km":
-            resultado = valor / 0.621371
-            texto_final = f"{valor} Millas son {resultado:.2f} Kilómetros"
+        elif tipoConversion == "celsiusAFahrenheit":
+            resultadoFinal = (numeroAConvertir * 9 / 5) + 32
+            mensajeResultado = f"{numeroAConvertir} °C equivalen a {resultadoFinal:.2f} °F."
 
-        elif operacion == "c_a_f":
-            resultado = (valor * 9 / 5) + 32
-            texto_final = f"{valor} ºC son {resultado:.2f} ºF"
-
-        elif operacion == "f_a_c":
-            resultado = (valor - 32) * 5 / 9
-            texto_final = f"{valor} ºF son {resultado:.2f} ºC"
-
-        # 4. Enviamos el texto con el resultado a la página de resultado
-        return render_template("resultado.html", res=texto_final)
+        elif tipoConversion == "fahrenheitACelsius":
+            resultadoFinal = (numeroAConvertir - 32) * 5 / 9
+            mensajeResultado = f"{numeroAConvertir} °F equivalen a {resultadoFinal:.2f} °C."
 
     except ValueError:
-        # Si el usuario escribe letras en lugar de números
-        return render_template("resultado.html", res="Error: Ingresa un número válido")
+        mensajeResultado = "Error: Por favor, ingrese un número válido."
+
+    return render_template("resultado.html", textoInformativo=mensajeResultado)
 
 
-# Se inicia el servidor en modo prueba
 if __name__ == "__main__":
-    app.run(debug=True)
+    aplicacionConversor.run(debug=True)
