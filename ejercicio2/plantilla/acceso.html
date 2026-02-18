@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Acceso</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+    <div class="cajaPrincipal">
+        <h2>Ingresar</h2>
+        <form action="/validarAcceso" method="POST">
+            <input type="text" name="nombreUsuario" placeholder="Usuario" required>
+            <input type="password" name="claveUsuario" placeholder="Contraseña" required>
+            <button type="submit" class="botonAccion">Entrar</button>
+        </form>
+    </div>
+</body>
+</html>

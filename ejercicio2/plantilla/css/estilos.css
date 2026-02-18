@@ -1,260 +1,55 @@
-/* Se selecciona todo el cuerpo de la página (la etiqueta body) */
 body {
-    /* Se define la la fuente de letra */
-    font-family: mencken-std-head-compress;
-    /* Se añade un margen en todo el contenido para que no quede pegado al borde */
-    margin: 30px;
-    /* Se cambia el color de fondo*/
-    background-color: #e9dff3;
+    background-color: #ffffff;
+    color: #000000;
+    font-family: "Courier New", Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-/* Se seleccionan los títulos de nivel 2 (la etiqueta h2) */
-h2 {
-    /* Se cambia el color del texto */
-    color: #333;
-    /* Se alinea el texto al centro de la página */
+.cajaPrincipal {
+    border: 1px solid #000000;
+    padding: 40px;
+    width: 320px;
     text-align: center;
 }
 
-/* Se selecciona el formulario (la etiqueta form) */
-form {
-    /* Se limita el ancho del formulario */
-    max-width: 300px;
-    /* Se centra el formulario horizontalmente usando márgenes automáticos a los lados */
-    margin: 0 auto;
-    /* Se le pone un fondo blanco al formulario para que resalte un poco */
-    background: white;
-    /* Se añade el relleno interno (padding) esto es para que el texto no toque los bordes del cuadro */
-    padding: 20px;
-    /* Se redondea las esquinas del cuadro del formulario con un radio */
-    border-radius: 8px;
-    /* Se añade una sombra suave alrededor del formulario para darle efecto de profundidad */
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-/* S seleccionan las etiquetas de texto de los inputs (label) */
-label {
-    /* Se hace que cada etiqueta ocupe su propia línea (bloque) para que el input baje a la siguiente */
-    display: block;
-    /* Se añade un margen arriba de 10 píxeles para separarlo del campo anterior */
-    margin-top: 10px;
-    /* Se pone la letra en negrita para que se lea mejor */
-    font-weight: bold;
-}
-
-/* Se seleccionan todos los campos de entrada (input) y el botón (button) */
-input, button {
-    /* Se hace que ocupen el 100% del ancho disponible dentro del formulario */
-    width: 100%;
-    /* Se añade un margen de 5 píxeles arriba para separarlos de su etiqueta */
-    margin-top: 5px;
-    /* Se añade espacio interno (padding) */
-    padding: 8px;
-    /* Se redondea los bordes de los inputs */
-    border-radius: 4px;
-    /* Se definen un borde gris claro y sólido */
-    border: 1px solid #a5a5a5;
-    /* Esta propiedad asegura que el padding no aumente el ancho total del elemento */
-    box-sizing: border-box;
-}
-
-/* Se selecciona específicamente el botón de enviar */
-button {
-    /* Se cambia el color de fondo del botó*/
-    background-color: #e600ff;
-    /* SE cambia el color del texto del botón */
-    color: white;
-    /* Se quita el borde gris que se puso antes, para este botón no se quiere */
-    border: none;
-    /* Se cambia el cursor a una mano cuando se pasa el mouse por encima */
-    cursor: pointer;
-    /* Se añade un margen extra arriba de 15 píxeles para separarlo de los inputs */
-    margin-top: 15px;
-}
-
-/* Se selecciona todo el cuerpo de la página (la etiqueta body) */
-body {
-    font-family: mencken-std-head-compress;
-    margin: 30px;
-    background-color: #e9dff3;
-}
-
-/* Se seleccionan los títulos de nivel 2 (la etiqueta h2) */
 h2 {
-    color: #333;
-    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-/* Se selecciona el formulario (la etiqueta form) */
-form {
-    max-width: 300px;
-    margin: 0 auto;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-/* Se selecciona las etiquetas de texto de los inputs (label) */
-label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-/* Se seleccionan todos los campos de entrada (input) y el botón (button) */
-input, button {
+input {
     width: 100%;
-    margin-top: 5px;
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #a5a5a5;
-    box-sizing: border-box;
-}
-
-/* Se selecciona específicamente el botón de enviar */
-button {
-    background-color: #e600ff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 15px;
-}
-
-/* Se selecciona el botón PERO solo cuando el ratón está encima (hover) */
-button:hover {
-    background-color: #a700b3;
-}
-
-/* --- PÁGINA DE BIENVENIDA --- */
-
-.contenedor-bienvenida {
-    background: white;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.titulo-bienvenida {
-    color: #e600ff;
-}
-
-.btn-cerrar-sesion {
-    display: block;
-    margin-top: 20px;
+    margin: 15px 0;
     padding: 12px;
-    background-color: #ff00ff;
-    color: white;
-    text-decoration: none;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+.botonAccion {
+    width: 100%;
+    padding: 12px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
     font-weight: bold;
-    text-align: center;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    text-transform: uppercase;
 }
 
-.btn-cerrar-sesion:hover {
-    background-color: #cc00cc;
+.botonAccion:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
 }
 
-/* Se selecciona el botón PERO solo cuando el ratón está encima (hover) */
-button:hover {
-    /* Se oscurece un poco el morado para dar feedback visual al usuario */
-    background-color: #a700b3;
-}
-
-/* --- PÁGINA DE ERROR --- */
-/* Aqui se indica que todo lo de abajo es para la página de error */
- /*  Se seleccionan la caja (div) que tiene la clase "contenedor-error" */
-.contenedor-error {
-
-
-   /* Se selecciona el fondo blanco a la caja para que resalte sobre el fondo morado de la página */
-    background: white;
-
-   /* La caja */
-    max-width: 400px;
-
-     /* - 80px arriba y abajo: baja la caja un poco para que no quede pegada arriba
-       - auto a los lados: centra la caja horizontalmente en la pantalla */
-    margin: 80px auto;
-
-    /* Espacio interno para que el texto no toque los bordes de la caja */
-    padding: 30px;
-
-   /* Redondea las esquinas de la caja con un radio */
-    border-radius: 10px;
-
- /* Añade una sombra suave alrededor de la caja:
-       - 0 0 = la sombra no se desplaza ni a los lados ni arriba/abajo
-       - 10px = qué tan difuminada está la sombra
-       - rgba(0,0,0,0.1) = negro con solo 10% de opacidad, muy transparente */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
-/* Centra todo el texto y los elementos que están dentro de la caja */
-    text-align: center;
-
-}
- /* Se selecciona SOLO el h2 que esté DENTRO de la caja contenedor-error
-       Esto es útil para no afectar otros h2 que pueda haber en la página */
-
-.contenedor-error h2 {
-
-        /* Se cambia el color del título a morado/fucsia para que combine con el diseño */
-    color: #e600ff;
-
-}
- /* Se selecciona SOLO el párrafo (p) que esté DENTRO de la caja contenedor-error */
-.contenedor-error p {
-
-/* Se pone el texto en un gris oscuro (no negro puro) para que sea más suave a la vista */
-    color: #555;
-
-/* Se añade unos píxeles de espacio debajo del párrafo para separarlo del botón */
-    margin-bottom: 20px;
-
-}
-/* Se selecciona el enlace (a) que tiene la clase "btn-volver" */
-.btn-volver {
-
-/* Hace que el enlace se comporte como un bloque pero solo ocupa el ancho de su contenido
-       Esto permite ponerle padding y que se vea como un botón */
-    display: inline-block;
-
-/* Espacio interno del botón:
-       - Los px arriba y abajo: hace el botón más alto
-       - Los px a los lados: hace el botón más ancho */
-    padding: 12px 25px;
-
-/* Se le pone fondo fucsia al botón para que combine con el resto del diseño */
-    background-color: #e600ff;
-
-/* El texto del botón se pone blanco para que contraste con el fondo morado */
-    color: white;
-
-/* Se le quita el subrayado que los enlaces tienen por defecto */
+a {
+    color: #000000;
+    font-size: 0.8em;
     text-decoration: none;
-
-/* Se pone el texto en negrita para que resalte más */
-    font-weight: bold;
-
-/* Se le redondean las esquinas del botón */
-    border-radius: 5px;
-
-/* Se prepara el botón para que cuando cambie de color lo haga suavemente:
-       - background-color = la propiedad que va a cambiar
-       - 0.3s = tarda 3 décimas de segundo en cambiar
-       - ease = el cambio empieza lento, acelera y termina lento */
-    transition: background-color 0.3s ease;
-
-}
-/* Se selecciona el botón SOLO cuando el cursor del ratón está encima */
-.btn-volver:hover {
-
-/* Se cambia el fondo a un morado más oscuro para indicarle al usuario
-       que puede hacer clic. Gracias al transition de arriba, el cambio es suave */
-
-    background-color: #a700b3;
-
+    border-bottom: 1px dashed #000000;
 }

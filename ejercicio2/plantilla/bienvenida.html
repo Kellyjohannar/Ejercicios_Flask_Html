@@ -2,15 +2,15 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Error</title>
+    <title>Bienvenida</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
 </head>
 <body>
     <div class="cajaPrincipal">
-        <h2>Error de Acceso</h2>
-        <p>Los datos ingresados no son correctos.</p>
+        <h1>¡Hola, {{ nombreCompleto }}!</h1>
+        <p>Has ingresado con éxito al sistema.</p>
         <br>
-        <a href="/">Volver a intentar</a>
+        <a href="/">Cerrar sesión</a>
     </div>
 </body>
 </html>
