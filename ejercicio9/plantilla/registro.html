@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+    <div class="marcoContenedor">
+        <h1>Registro</h1>
+
+        <form method="POST">
+            <label>Nombre:</label>
+            <input type="text" name="nombreUsuario" required>
+
+            <label>Correo:</label>
+            <input type="email" name="correoUsuario" required>
+
+            <label>Ciudad:</label>
+            <input type="text" name="ciudadUsuario" required>
+
+            <button type="submit" class="botonRegistro">Registrar</button>
+        </form>
+
+        {% if informacion %}
+            <div class="cuadroConfirmacion">
+                <p><strong>Gestor:</strong> {{ informacion.autor }}</p>
+                <p><strong>Usuario:</strong> {{ informacion.nombre }}</p>
+                <p><strong>Email:</strong> {{ informacion.correo }}</p>
+                <p><strong>Ubicación:</strong> {{ informacion.ciudad }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
