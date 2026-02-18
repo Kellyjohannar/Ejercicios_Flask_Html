@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tareas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+    <div class="contenedorPrincipal">
+        <h1>Tareas</h1>
+
+        <form action="/registrarTarea" method="POST">
+            <input type="text" name="textoTarea" placeholder="Describir tarea..." required>
+            <button type="submit" class="botonNegro">Guardar</button>
+        </form>
+
+        <ul class="listaTareas">
+            {% for tarea in tareas %}
+                <li class="elementoTarea">
+                    <span>{{ tarea }}</span>
+                    <form action="/quitarTarea" method="POST" style="margin: 0;">
+                        <input type="hidden" name="posicion" value="{{ loop.index0 }}">
+                        <button type="submit" class="botonEliminar">Eliminar</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+
+        {% if not tareas %}
+            <p class="mensajeVacio">No hay tareas pendientes.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
