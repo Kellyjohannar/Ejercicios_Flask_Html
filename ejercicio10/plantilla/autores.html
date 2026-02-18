@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Autores{% endblock %}
+
+{% block contenido %}
+    <h1>Gestion de Autores</h1>
+
+    <form action="/autores" method="POST" class="formulario">
+        <input type="text" name="nombre_autor" placeholder="Nuevo Autor..." required>
+        <button type="submit" class="btn-morado">Anadir</button>
+    </form>
+
+    <hr>
+
+    <ul class="lista">
+        {% for autor in autores %}
+            <li class="item">{{ autor }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

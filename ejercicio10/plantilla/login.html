@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Acceso{% endblock %}
+
+{% block contenido %}
+    <div class="caja-login">
+        <h1>Acceso Privado</h1>
+        <p>Usuario: <b>admin</b> | Clave: <b>1234</b></p>
+
+        <form action="/" method="POST">
+            <input type="text" name="usuario" placeholder="Usuario" required>
+            <input type="password" name="contrasena" placeholder="Contrasena" required>
+
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+
+            <button type="submit" class="btn-morado">Entrar</button>
+        </form>
+    </div>
+{% endblock %}

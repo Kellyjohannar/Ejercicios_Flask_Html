@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Agenda</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+
+    <div class="contenedor">
+        <h1> Agenda de Contactos</h1>
+
+        <form action="/agregar" method="POST" class="formulario">
+            <input type="text" name="nombre" placeholder="Nombre..." required>
+            <input type="text" name="telefono" placeholder="Teléfono..." required>
+            <button type="submit" class="btn-guardar">Guardar</button>
+        </form>
+
+        <hr>
+
+        <ul class="lista">
+            {% for contacto in contactos %}
+                <li class="item">
+                    <div class="datos">
+                        <span class="nombre">{{ contacto.nombre }}</span>
+                        <span class="telefono"> {{ contacto.telefono }}</span>
+                    </div>
+
+                    <form action="/eliminar" method="POST">
+                        <input type="hidden" name="indice" value="{{ loop.index0 }}">
+                        <button type="submit" class="btn-borrar">X</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+
+        {% if not contactos %}
+            <p class="vacio">No hay contactos guardados.</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Inicio{% endblock %}
+
+{% block contenido %}
+    <h1>Hola, {{ usuario }}</h1>
+    <p>Bienvenidos.</p>
+
+    <div class="tarjetas-resumen">
+        <div class="tarjeta">
+            <h3>Autores</h3>
+            <p>Gestiona los escritores del sistema.</p>
+            <a href="/autores" class="btn-pequeno">Ir a Autores</a>
+        </div>
+        <div class="tarjeta">
+            <h3>Libros</h3>
+            <p>Añade libros a tu catalogo.</p>
+            <a href="/libros" class="btn-pequeno">Ir a Libros</a>
+        </div>
+    </div>
+{% endblock %}

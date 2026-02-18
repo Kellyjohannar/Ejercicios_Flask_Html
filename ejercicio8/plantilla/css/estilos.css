@@ -1,0 +1,92 @@
+/* --- CONFIGURACIÓN GENERAL --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f3e5f5; /* Fondo lila suave */
+    margin: 0; /* Quitamos márgenes por defecto */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Para que el footer se quede abajo */
+}
+
+/* --- BARRA DE NAVEGACIÓN (MENÚ) --- */
+.barra-navegacion {
+    background-color: #4a148c; /* Morado oscuro */
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.link-menu {
+    color: white;
+    text-decoration: none; /* Quitamos subrayado */
+    font-weight: bold;
+    margin: 0 15px; /* Separación entre enlaces */
+    font-size: 18px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.link-menu:hover {
+    background-color: #8e44ad; /* Fondo más claro al pasar mouse */
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.contenedor-principal {
+    background-color: white;
+    width: 600px;
+    margin: 40px auto; /* Centrado horizontal */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(142, 68, 173, 0.15);
+    text-align: center;
+    flex: 1; /* Esto empuja el footer hacia abajo */
+}
+
+h1 { color: #6a1b9a; }
+p { color: #555; font-size: 16px; line-height: 1.6; }
+
+/* --- CAJA DESTACADA (HOME) --- */
+.caja-destacada {
+    background-color: #ede7f6;
+    border-left: 5px solid #8e44ad;
+    padding: 15px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+/* --- FORMULARIO (CONTACTO) --- */
+.formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+input {
+    padding: 12px;
+    border: 2px solid #e1bee7;
+    border-radius: 10px;
+    outline: none;
+}
+input:focus { border-color: #8e44ad; }
+
+.btn-morado {
+    background-color: #8e44ad;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.btn-morado:hover { background-color: #6c3483; }
+
+/* --- PIE DE PÁGINA --- */
+.pie-pagina {
+    background-color: #4a148c;
+    color: #d1c4e9;
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+}

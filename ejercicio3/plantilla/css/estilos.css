@@ -1,0 +1,177 @@
+/* Se selecciona todo el cuerpo de la página */
+body {
+    /* Se define la fuente igual a tus otros ejercicios */
+    font-family: mencken-std-head-compress;
+    /* Se elimina el margen por defecto del navegador */
+    margin: 0;
+    /* Se añade espacio interno arriba y abajo */
+    padding: 40px 20px;
+    /* Se pone el mismo color de fondo morado claro de tus otros ejercicios */
+    background-color: #e9dff3;
+}
+
+/* Se selecciona la caja principal que contiene todo */
+.contenedor {
+    /* Se limita el ancho máximo para que no se estire en pantallas grandes */
+    max-width: 500px;
+    /* Se centra la caja horizontalmente */
+    margin: 0 auto;
+    /* Se pone fondo blanco para que resalte sobre el fondo morado */
+    background: white;
+    /* Se añade espacio interno para que el contenido no toque los bordes */
+    padding: 30px;
+    /* Se redondean las esquinas */
+    border-radius: 10px;
+    /* Se añade sombra suave para dar profundidad */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Se selecciona el título principal */
+.titulo {
+    /* Se pone el color fucsia de tus otros ejercicios para mantener armonía */
+    color: #e600ff;
+    /* Se centra el texto */
+    text-align: center;
+    /* Se añade espacio abajo para separarlo del formulario */
+    margin-bottom: 25px;
+}
+
+/* Se selecciona el formulario de agregar tareas */
+.formulario-agregar {
+    /* Se usa flexbox para poner el input y el botón en la misma línea */
+    display: flex;
+    /* Se añade espacio entre el input y el botón */
+    gap: 10px;
+    /* Se añade espacio abajo para separarlo de la lista */
+    margin-bottom: 25px;
+}
+
+/* Se selecciona el campo de texto donde se escribe la tarea */
+.input-tarea {
+    /* Se hace que el input ocupe todo el espacio disponible */
+    flex: 1;
+    /* Se añade espacio interno */
+    padding: 10px;
+    /* Se redondean las esquinas */
+    border-radius: 6px;
+    /* Se pone un borde gris suave */
+    border: 1px solid #a5a5a5;
+    /* Se define el tamaño de la letra */
+    font-size: 15px;
+    /* Se asegura que el padding no aumente el ancho total */
+    box-sizing: border-box;
+}
+
+/* Se selecciona el campo de texto cuando el cursor está dentro */
+.input-tarea:focus {
+    /* Se quita el borde azul por defecto del navegador */
+    outline: none;
+    /* Se pone un borde fucsia para que combine con el diseño */
+    border-color: #e600ff;
+}
+
+/* Se selecciona el botón de agregar */
+.btn-agregar {
+    /* Se pone el color fucsia de tus otros ejercicios */
+    background-color: #e600ff;
+    /* Se pone el texto en blanco para que contraste */
+    color: white;
+    /* Se quita el borde por defecto */
+    border: none;
+    /* Se añade espacio interno */
+    padding: 10px 18px;
+    /* Se redondean las esquinas */
+    border-radius: 6px;
+    /* Se cambia el cursor por la mano */
+    cursor: pointer;
+    /* Se define el tamaño de la letra */
+    font-size: 15px;
+    /* Se prepara la animación suave del color */
+    transition: background-color 0.3s ease;
+}
+
+/* Se selecciona el botón agregar cuando el cursor está encima */
+.btn-agregar:hover {
+    /* Se oscurece el color para dar feedback visual */
+    background-color: #a700b3;
+}
+
+/* Se selecciona la lista de tareas */
+.lista-tareas {
+    /* Se quita el estilo de lista por defecto (los puntos) */
+    list-style: none;
+    /* Se quita el margen por defecto */
+    margin: 0;
+    /* Se quita el padding que empuja la lista a la derecha */
+    padding: 0;
+}
+
+/* Se selecciona cada elemento de la lista */
+.tarea-item {
+    /* Se usa flexbox para poner el texto y el botón en la misma línea */
+    display: flex;
+    /* Se separan el texto y el botón en extremos opuestos */
+    justify-content: space-between;
+    /* Se centra verticalmente el texto con el botón */
+    align-items: center;
+    /* Se añade espacio interno */
+    padding: 12px 15px;
+    /* Se añade espacio entre cada tarea */
+    margin-bottom: 10px;
+    /* Se pone fondo morado muy clarito para cada tarea */
+    background-color: #f5eeff;
+    /* Se redondean las esquinas */
+    border-radius: 8px;
+    /* Se añade borde izquierdo fucsia como detalle decorativo */
+    border-left: 4px solid #e600ff;
+}
+
+/* Se selecciona el texto de cada tarea */
+.tarea-texto {
+    /* Se define el tamaño de la letra */
+    font-size: 15px;
+    /* Se pone color gris oscuro para que sea legible */
+    color: #333;
+}
+
+/* Se selecciona el formulario de eliminar dentro de cada tarea */
+.formulario-eliminar {
+    /* Se elimina el margen por defecto del formulario */
+    margin: 0;
+}
+
+/* Se selecciona el botón de eliminar */
+.btn-eliminar {
+    /* Se pone fondo transparente */
+    background-color: transparent;
+    /* Se pone color morado para que combine */
+    color: #e600ff;
+    /* Se quita el borde */
+    border: none;
+    /* Se cambia el cursor por mano*/
+    cursor: pointer;
+    /* Se define el tamaño de la letra para que se vea bien */
+    font-size: 18px;
+    /* Se pone en negrita */
+    font-weight: bold;
+    /* Se prepara la animación suave */
+    transition: color 0.3s ease;
+}
+
+/* Se selecciona el botón eliminar cuando el cursor está encima */
+.btn-eliminar:hover {
+    /* Se oscurece para dar feedback visual */
+    color: #a700b3;
+}
+
+/* Se selecciona el mensaje que aparece cuando no hay tareas */
+.mensaje-vacio {
+    /* Se centra el texto */
+    text-align: center;
+    /* Se pone color gris suave */
+    color: #888;
+    /* Se pone en cursiva para diferenciarlo */
+    font-style: italic;
+    /* Se añade espacio arriba y abajo */
+    margin: 20px 0;
+}

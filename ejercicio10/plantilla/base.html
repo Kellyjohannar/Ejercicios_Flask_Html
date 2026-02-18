@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block titulo %}Panel{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+
+    {% if session['usuario_logueado'] %}
+    <nav class="menu-superior">
+        <div class="logo">Panel de Administracion</div>
+        <div class="enlaces">
+            <a href="/panel">Inicio</a>
+            <a href="/autores">Autores</a>
+            <a href="/libros">Libros</a>
+            <a href="/logout" class="btn-salir">Cerrar Sesion</a>
+        </div>
+    </nav>
+    {% endif %}
+
+    <div class="contenedor-principal">
+        {% block contenido %}{% endblock %}
+    </div>
+
+</body>
+</html>

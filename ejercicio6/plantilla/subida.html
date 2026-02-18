@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Subir Archivos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+
+    <div class="contenedor">
+        <h1>Gestor de Archivos</h1>
+        <p class="subtitulo">Sube tus documentos al servidor</p>
+
+        <form action="/subir" method="POST" enctype="multipart/form-data" class="formulario">
+
+            <div class="zona-input">
+                <input type="file" name="archivo_usuario" required>
+            </div>
+
+            <button type="submit" class="btn-morado">Subir Archivo</button>
+        </form>
+
+        <hr>
+
+        <h3>Archivos en el servidor:</h3>
+
+        <ul class="lista">
+            {% for nombre in archivos %}
+                <li class="item-archivo">
+
+                    <span class="nombre-archivo">{{ nombre }}</span>
+
+                    <a href="{{ url_for('static', filename='archivos_subidos/' + nombre) }}" class="btn-ver" target="_blank">Ver</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        {% if not archivos %}
+            <p class="vacio">No hay archivos subidos todavía.</p>
+        {% endif %}
+
+    </div>
+
+</body>
+</html>

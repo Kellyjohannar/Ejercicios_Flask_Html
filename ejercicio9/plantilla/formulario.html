@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Validación de Formularios</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+
+    <div class="contenedor">
+        <h1> Validación</h1>
+        <p class="subtitulo">Validamos datos en el servidor (Python)</p>
+
+        {% with mensajes = get_flashed_messages(with_categories=true) %}
+            {% if mensajes %}
+                <div class="zona-mensajes">
+                    {% for categoria, mensaje in mensajes %}
+                        <div class="alerta alerta-{{ categoria }}">
+                            {{ mensaje }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <form action="/validar" method="POST" class="formulario">
+
+            <label>Nombre Completo:</label>
+            <input type="text" name="nombre" placeholder="Ej: Kelly Johanna">
+
+            <label>Edad:</label>
+            <input type="text" name="edad" placeholder="Ej: 25">
+
+            <label>Correo Electrónico:</label>
+            <input type="text" name="correo" placeholder="Ej: kellyjohanna@email.com">
+
+            <button type="submit" class="btn-morado">Validar Datos</button>
+        </form>
+
+    </div>
+
+</body>
+</html>

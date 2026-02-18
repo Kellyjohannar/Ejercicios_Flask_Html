@@ -1,0 +1,91 @@
+/* Esta es la configuración general */
+body {
+    font-family: sans-serif;
+    background-color: #f3e5f5;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+/* Este es el Principal */
+.contenedor {
+    background-color: white;
+    width: 400px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(128, 0, 128, 0.2); /* Aqui se pone una sombra morada */
+}
+
+h1 {
+    color: #4a148c;
+    text-align: center;
+}
+
+/* Estas son las cajas de texto */
+input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #e1bee7;
+    border-radius: 10px;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: #9c27b0; /* Aqui se le pone el borde */
+}
+
+/* Aqui se le dan los estilos botón Guardar */
+.btn-guardar {
+    background-color: #8e44ad;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-guardar:hover {
+    background-color: #6c3483; /* Aqui se pone el más oscuro al pasar el mouse */
+}
+
+/* Esta es la lista */
+.lista {
+    list-style: none;
+    padding: 0;
+}
+
+.item {
+    background-color: #fcfcfc;
+    border-bottom: 1px solid #eee;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nombre {
+    font-weight: bold;
+    color: #4a148c;
+    display: block;
+}
+
+.telefono {
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Este es el botón borrar */
+.btn-borrar {
+    background-color: #ff5252;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.vacio { text-align: center; color: #aaa; }
+hr { border: 0; height: 1px; background: #e1bee7; margin: 20px 0; }

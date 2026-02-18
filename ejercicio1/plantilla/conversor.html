@@ -1,0 +1,28 @@
+<!--Esta es la primera interacción que se tiene con el usuario-->
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Mi Conversor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+    <h1>Conversor de Unidades</h1>
+
+    <form action="/convertir" method="post">
+
+        <label>Escribe el valor:</label>
+        <input type="number" name="valor" step="any" required><br><br>
+
+        <label>¿Qué quieres convertir?</label>
+        <select name="opcion_conversion">
+            <option value="km_a_millas">Kilómetros a Millas</option>
+            <option value="millas_a_km">Millas a Kilómetros</option>
+            <option value="c_a_f">Celsius a Fahrenheit</option>
+            <option value="f_a_c">Fahrenheit a Celsius</option>
+        </select><br><br>
+
+        <button type="submit">Calcular Resultado</button>
+    </form>
+</body>
+</html>

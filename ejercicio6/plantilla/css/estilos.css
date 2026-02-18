@@ -1,0 +1,126 @@
+/* --- CONFIGURACIÓN GENERAL --- */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    /* Fondo lila suave */
+    background-color: #f3e5f5;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+/* --- TARJETA PRINCIPAL --- */
+.contenedor {
+    background-color: white;
+    width: 450px;
+    padding: 30px;
+    border-radius: 20px;
+    /* Sombra morada elegante */
+    box-shadow: 0 10px 25px rgba(142, 68, 173, 0.2);
+}
+
+h1 {
+    color: #4a148c; /* Morado oscuro */
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #9b59b6;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* --- ZONA DEL INPUT FILE --- */
+.zona-input {
+    background-color: #f8f8f8;
+    border: 2px dashed #e1bee7; /* Borde punteado */
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.zona-input:hover {
+    background-color: #f3e5f5;
+    border-color: #8e44ad;
+}
+
+/* Input de archivo */
+input[type="file"] {
+    font-size: 14px;
+    color: #555;
+}
+
+/* --- BOTÓN SUBIR --- */
+.btn-morado {
+    background-color: #8e44ad;
+    color: white;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.btn-morado:hover {
+    background-color: #6c3483;
+}
+
+/* Separador */
+hr {
+    border: 0;
+    height: 1px;
+    background: #e1bee7;
+    margin: 25px 0;
+}
+
+h3 { color: #6a1b9a; margin-bottom: 15px; }
+
+/* --- LISTA DE ARCHIVOS --- */
+.lista {
+    list-style: none;
+    padding: 0;
+}
+
+.item-archivo {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nombre-archivo {
+    color: #333;
+    font-weight: 500;
+    /* Esto corta el nombre si es muy largo para que no rompa el diseño */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+}
+
+.icono { font-size: 1.2em; margin-right: 10px; }
+
+/* Botón pequeño para Ver */
+.btn-ver {
+    background-color: #9575cd;
+    color: white;
+    text-decoration: none; /* Quita el subrayado del link */
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.btn-ver:hover {
+    background-color: #673ab7;
+}
+
+.vacio { text-align: center; color: #aaa; font-style: italic; }

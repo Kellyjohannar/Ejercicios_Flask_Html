@@ -1,0 +1,113 @@
+/* --- CONFIGURACIÓN GENERAL --- */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    /* Fondo lila muy suave */
+    background-color: #f3e5f5;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+/* --- TARJETA PRINCIPAL --- */
+.contenedor {
+    background-color: white;
+    width: 450px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(142, 68, 173, 0.2);
+}
+
+h1 {
+    color: #4a148c; /* Morado oscuro */
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #9b59b6;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+/* --- INPUTS --- */
+input[type="text"] {
+    width: 90%;
+    padding: 12px;
+    border: 2px solid #e1bee7;
+    border-radius: 10px;
+    outline: none;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type="text"]:focus {
+    border-color: #8e44ad;
+}
+
+/* --- BOTONES --- */
+.btn-morado {
+    background-color: #8e44ad;
+    color: white;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.btn-morado:hover { background-color: #6c3483; }
+
+.btn-secundario {
+    background-color: white;
+    color: #8e44ad;
+    border: 2px solid #8e44ad;
+    width: 100%;
+    padding: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-secundario:hover { background-color: #f3e5f5; }
+
+hr { border: 0; height: 1px; background: #e1bee7; margin: 20px 0; }
+
+/* --- LISTA DE RESULTADOS --- */
+.lista {
+    list-style: none;
+    padding: 0;
+}
+
+.item-api {
+    background-color: #fafafa;
+    border-bottom: 1px solid #eee;
+    padding: 12px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    animation: aparecer 0.3s ease;
+}
+
+/* Etiqueta pequeña para el ID */
+.tag {
+    background-color: #d1c4e9;
+    color: #4a148c;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
