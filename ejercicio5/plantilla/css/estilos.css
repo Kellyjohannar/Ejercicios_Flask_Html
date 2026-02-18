@@ -1,91 +1,70 @@
-/* Esta es la configuración general */
 body {
-    font-family: sans-serif;
-    background-color: #f3e5f5;
+    background-color: #ffffff;
+    color: #000000;
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     padding-top: 50px;
+    margin: 0;
 }
 
-/* Este es el Principal */
-.contenedor {
-    background-color: white;
+.marcoContenedor {
+    border: 2px solid #000000;
+    padding: 40px;
     width: 400px;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(128, 0, 128, 0.2); /* Aqui se pone una sombra morada */
 }
 
 h1 {
-    color: #4a148c;
     text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 10px;
 }
 
-/* Estas son las cajas de texto */
-input[type="text"] {
-    width: 90%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 2px solid #e1bee7;
-    border-radius: 10px;
-    outline: none;
-}
-
-input[type="text"]:focus {
-    border-color: #9c27b0; /* Aqui se le pone el borde */
-}
-
-/* Aqui se le dan los estilos botón Guardar */
-.btn-guardar {
-    background-color: #8e44ad;
-    color: white;
-    border: none;
+input {
     width: 100%;
+    margin-bottom: 15px;
     padding: 10px;
-    border-radius: 10px;
-    font-weight: bold;
-    cursor: pointer;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    box-sizing: border-box;
 }
 
-.btn-guardar:hover {
-    background-color: #6c3483; /* Aqui se pone el más oscuro al pasar el mouse */
-}
-
-/* Esta es la lista */
-.lista {
-    list-style: none;
-    padding: 0;
-}
-
-.item {
-    background-color: #fcfcfc;
-    border-bottom: 1px solid #eee;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nombre {
-    font-weight: bold;
-    color: #4a148c;
-    display: block;
-}
-
-.telefono {
-    color: #666;
-    font-size: 0.9em;
-}
-
-/* Este es el botón borrar */
-.btn-borrar {
-    background-color: #ff5252;
-    color: white;
+.botonPrincipal {
+    width: 100%;
+    padding: 12px;
+    background-color: #000000;
+    color: #ffffff;
     border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
     cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-.vacio { text-align: center; color: #aaa; }
-hr { border: 0; height: 1px; background: #e1bee7; margin: 20px 0; }
+.botonPrincipal:hover {
+    background-color: #ffffff;
+    color: #000000;
+    outline: 1px solid #000000;
+}
+
+.tablaContactos {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+}
+
+.tablaContactos th, .tablaContactos td {
+    border: 1px solid #000000;
+    padding: 10px;
+    text-align: left;
+}
+
+.botonEnlace {
+    background: none;
+    border: none;
+    color: #000000;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 0.85em;
+}

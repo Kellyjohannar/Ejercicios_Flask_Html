@@ -2,42 +2,46 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mi Agenda</title>
+    <title>Agenda</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
 </head>
 <body>
+    <div class="marcoContenedor">
+        <h1>Agenda</h1>
 
-    <div class="contenedor">
-        <h1> Agenda de Contactos</h1>
-
-        <form action="/agregar" method="POST" class="formulario">
-            <input type="text" name="nombre" placeholder="Nombre..." required>
-            <input type="text" name="telefono" placeholder="Teléfono..." required>
-            <button type="submit" class="btn-guardar">Guardar</button>
+        <form action="/guardarContacto" method="POST">
+            <input type="text" name="nombreContacto" placeholder="Nombre completo" required>
+            <input type="text" name="telefonoContacto" placeholder="Número de teléfono" required>
+            <button type="submit" class="botonPrincipal">Agregar Contacto</button>
         </form>
 
-        <hr>
-
-        <ul class="lista">
-            {% for contacto in contactos %}
-                <li class="item">
-                    <div class="datos">
-                        <span class="nombre">{{ contacto.nombre }}</span>
-                        <span class="telefono"> {{ contacto.telefono }}</span>
-                    </div>
-
-                    <form action="/eliminar" method="POST">
-                        <input type="hidden" name="indice" value="{{ loop.index0 }}">
-                        <button type="submit" class="btn-borrar">X</button>
-                    </form>
-                </li>
-            {% endfor %}
-        </ul>
-
-        {% if not contactos %}
-            <p class="vacio">No hay contactos guardados.</p>
+        {% if contactos %}
+            <table class="tablaContactos">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Teléfono</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for contacto in contactos %}
+                        <tr>
+                            <td>{{ contacto.nombre }}</td>
+                            <td>{{ contacto.telefono }}</td>
+                            <td>
+                                <form action="/borrarContacto" method="POST" style="margin: 0;">
+                                    <input type="hidden" name="indice" value="{{ loop.index0 }}">
+                                    <button type="submit" class="botonEnlace">Quitar</button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p style="text-align: center; margin-top: 20px;">La agenda está vacía.</p>
         {% endif %}
     </div>
-
 </body>
 </html>
