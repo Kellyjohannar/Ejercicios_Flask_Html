@@ -13,7 +13,6 @@ def procesarConversion():
     valorRecibido = request.form.get("valorEntrada", "0")
     tipoConversion = request.form.get("tipoSeleccionado")
 
-    # Inicializamos variables para evitar retornos extraños dentro de los condicionales
     resultadoFinal = 0.0
     mensajeResultado = ""
 
