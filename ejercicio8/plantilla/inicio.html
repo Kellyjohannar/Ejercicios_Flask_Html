@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block titulo %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="/">Inicio</a>
+        <a href="/sobreMi">Sobre mi</a>
+        <a href="/contacto">Contacto</a>
+    </nav>
+
+    <div class="contenidoPrincipal">
+        {% block contenido %}{% endblock %}
+    </div>
+
+    <footer>
+        &copy; 2026 Alexander
+    </footer>
+</body>
+</html>
